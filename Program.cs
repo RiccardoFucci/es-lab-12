@@ -27,7 +27,7 @@ namespace es_lab_12
             min = pesi[0];
             max = pesi[0];
             double somma = 0;
-            for(int i = 0;i< pesi.Length; i++)
+            for (int i = 0;i< pesi.Length; i++)
             {
                 somma += pesi[i];
                 if (pesi[i] > max)
@@ -41,7 +41,30 @@ namespace es_lab_12
             }
             media=somma/pesi.Length;
         }
+        static void Ordina(ref double[]pesi,ref int[] età)
+        {
+            double tempPesi;
+            int tempEtà;
 
+            for (int i = 0;età.Length; i++)
+            {
+                for(int j = 0;j< età.Length - 1 - i; j++)
+                {
+                    if (età[j]< età[j + 1])
+                    {
+                        tempEtà = età[j];
+                        età[j] = età[j + 1];
+                        età[j + 1] = tempEtà;
+                    }
+                    if (pesi[j] < pesi[j + 1])
+                    {
+                        tempPesi = pesi[j];
+                        pesi[j] = pesi[j + 1];
+                        pesi[j+1] = tempPesi;   
+                    }
+                }
+            }
+        }
 
     }
 }
