@@ -22,5 +22,26 @@ namespace es_lab_12
                 età[i] = random.Next(18, 100);
             }
         }
+        static void Statistiche(ref double[] pesi,ref double media,ref double min,ref double max)
+        {
+            min = pesi[0];
+            max = pesi[0];
+            double somma = 0;
+            for(int i = 0;i< pesi.Length; i++)
+            {
+                somma += pesi[i];
+                if (pesi[i] > max)
+                {
+                    max = pesi[i];
+                }
+                if (pesi[i] < min)
+                {
+                    min = pesi[i];
+                }
+            }
+            media=somma/pesi.Length;
+        }
+
+
     }
 }
